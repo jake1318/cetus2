@@ -1,0 +1,45 @@
+@import "./variables.scss";
+
+.app-footer {
+  margin-top: auto;
+  padding: 2rem 0;
+  border-top: 1px solid rgba($accent-primary, 0.2);
+  width: 100%;
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    a {
+      color: $text-secondary;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $accent-primary;
+        text-shadow: 0 0 8px $glow-primary;
+      }
+    }
+  }
+
+  .footer-disclaimer {
+    color: $text-tertiary;
+    font-size: 0.9rem;
+    max-width: 800px;
+    line-height: 1.6;
+  }
+
+  .copyright {
+    color: $text-tertiary;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+}

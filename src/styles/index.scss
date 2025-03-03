@@ -1,0 +1,244 @@
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  background-color: $background-primary;
+  color: $text-primary;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+html {
+  &[data-theme="dark"] {
+    --background-primary: #{$background-primary};
+    --background-secondary: #{$background-secondary};
+    --background-tertiary: #{$background-tertiary};
+
+    --text-primary: #{$text-primary};
+    --text-secondary: #{$text-secondary};
+    --text-tertiary: #{$text-tertiary};
+
+    --accent-primary: #{$accent-primary};
+    --accent-secondary: #{$accent-secondary};
+    --accent-tertiary: #{$accent-tertiary};
+
+    --success: #{$success};
+    --warning: #{$warning};
+    --error: #{$error};
+
+    --glow-primary: #{$glow-primary};
+    --glow-secondary: #{$glow-secondary};
+
+    --gradient-primary: #{$gradient-primary};
+    --gradient-secondary: #{$gradient-secondary};
+    --gradient-background: #{$gradient-background};
+
+    --border-radius-sm: #{$border-radius-sm};
+    --border-radius-md: #{$border-radius-md};
+    --border-radius-lg: #{$border-radius-lg};
+
+    --shadow-sm: #{$shadow-sm};
+    --shadow-md: #{$shadow-md};
+    --shadow-lg: #{$shadow-lg};
+    --shadow-neon: #{$shadow-neon};
+  }
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  background: $gradient-background;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $text-primary;
+}
+
+a {
+  color: $accent-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 8px $glow-primary;
+  }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid $background-secondary;
+    border-top: 3px solid $accent-primary;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 15px $glow-primary;
+  }
+
+  p {
+    color: $text-secondary;
+  }
+}
+
+.error-message {
+  background-color: rgba($error, 0.2);
+  color: $error;
+  padding: 1rem;
+  border-radius: $border-radius-md;
+  margin: 1rem 0;
+  box-shadow: 0 0 10px rgba($error, 0.4);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes neon-glow {
+  0% {
+    box-shadow: 0 0 5px $glow-primary, 0 0 10px $glow-primary;
+  }
+  50% {
+    box-shadow: 0 0 15px $glow-primary, 0 0 20px $glow-primary;
+  }
+  100% {
+    box-shadow: 0 0 5px $glow-primary, 0 0 10px $glow-primary;
+  }
+}
+
+.neon-text {
+  text-shadow: 0 0 5px $glow-primary, 0 0 10px $glow-primary;
+}
+
+.neon-border {
+  border: 1px solid $accent-primary;
+  box-shadow: 0 0 10px $glow-primary;
+}
+
+// Responsive breakpoints
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+// Common button styles
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: $border-radius-md;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &.btn-primary {
+    background: $gradient-primary;
+    color: $text-primary;
+
+    &:hover {
+      box-shadow: 0 0 15px $glow-primary;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  &.btn-secondary {
+    background: $background-secondary;
+    color: $text-primary;
+    border: 1px solid $accent-primary;
+
+    &:hover {
+      box-shadow: 0 0 10px $glow-primary;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  &.btn-danger {
+    background: linear-gradient(135deg, $error, darken($error, 20%));
+    color: $text-primary;
+
+    &:hover {
+      box-shadow: 0 0 15px rgba($error, 0.6);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+}
+
+// Glass effect
+.glass {
+  background: rgba($background-tertiary, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba($accent-primary, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+// For debugging
+.debug {
+  border: 1px solid red;
+}

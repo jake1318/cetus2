@@ -1,0 +1,89 @@
+.pools-list {
+  background-color: #1e293b;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.search-container {
+  padding: 1rem;
+  background-color: #263449;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #475569;
+  border-radius: 0.375rem;
+  background-color: #334155;
+  color: #e2e8f0;
+  font-size: 0.875rem;
+
+  &::placeholder {
+    color: #94a3b8;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+  }
+}
+
+.pools-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  padding: 1rem;
+  border-bottom: 1px solid #334155;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.pool-header-item {
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    color: #e2e8f0;
+  }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  color: #94a3b8;
+}
+
+.no-pools {
+  padding: 3rem 0;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.error-message {
+  padding: 1rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left: 4px solid #ef4444;
+  color: #fecaca;
+  border-radius: 0.25rem;
+  margin: 1rem;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(56, 189, 248, 0.3);
+  border-top-color: #38bdf8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

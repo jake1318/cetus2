@@ -1,0 +1,179 @@
+@import "./variables.scss";
+
+.user-liquidity {
+  width: 100%;
+
+  h2 {
+    margin-bottom: 1.5rem;
+    color: $text-primary;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .positions-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .position-card {
+    background: $background-tertiary;
+    border-radius: $border-radius-md;
+    overflow: hidden;
+    border: 1px solid rgba($accent-primary, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .position-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 1rem;
+      border-bottom: 1px solid rgba($accent-primary, 0.1);
+
+      .position-pair {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        .token-icons {
+          position: relative;
+          width: 3rem;
+          height: 1.5rem;
+
+          .token-icon {
+            width: 1.75rem;
+            height: 1.75rem;
+            border-radius: 50%;
+            background: linear-gradient(
+              135deg,
+              $accent-secondary,
+              $accent-tertiary
+            );
+            color: $text-primary;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+            border: 2px solid $background-tertiary;
+
+            &.token-icon-overlap {
+              position: absolute;
+              left: 1rem;
+              top: 0;
+              background: linear-gradient(
+                135deg,
+                $accent-primary,
+                $accent-tertiary
+              );
+            }
+          }
+        }
+
+        .token-names {
+          font-weight: 600;
+        }
+
+        .position-fee {
+          font-size: 0.85rem;
+          color: $text-tertiary;
+          background: rgba($background-secondary, 0.6);
+          padding: 0.2rem 0.5rem;
+          border-radius: $border-radius-sm;
+        }
+      }
+
+      .position-apr {
+        color: $success;
+        font-weight: 600;
+        font-size: 0.9rem;
+
+        span {
+          color: $text-tertiary;
+          margin-right: 0.25rem;
+        }
+      }
+    }
+
+    .position-details {
+      padding: 1rem;
+
+      .position-detail {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.75rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .detail-label {
+          color: $text-tertiary;
+        }
+
+        .detail-value {
+          color: $text-secondary;
+          font-family: monospace;
+        }
+      }
+    }
+
+    .position-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      padding: 1rem;
+      border-top: 1px solid rgba($accent-primary, 0.1);
+
+      .action-btn {
+        padding: 0.75rem 0;
+        border-radius: $border-radius-md;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &.remove-btn {
+          background: rgba($accent-secondary, 0.1);
+          color: $accent-secondary;
+          border: 1px solid $accent-secondary;
+
+          &:hover {
+            background: rgba($accent-secondary, 0.2);
+            box-shadow: 0 0 10px rgba($accent-secondary, 0.5);
+          }
+        }
+
+        &.view-btn {
+          background: rgba($accent-tertiary, 0.1);
+          color: $accent-tertiary;
+          border: 1px solid $accent-tertiary;
+
+          &:hover {
+            background: rgba($accent-tertiary, 0.2);
+            box-shadow: 0 0 10px rgba($accent-tertiary, 0.5);
+          }
+        }
+      }
+    }
+  }
+
+  .no-positions {
+    text-align: center;
+    padding: 3rem 0;
+    color: $text-secondary;
+
+    p {
+      margin-bottom: 0.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+        color: $text-tertiary;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

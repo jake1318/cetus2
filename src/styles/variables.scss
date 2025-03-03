@@ -1,0 +1,39 @@
+// Colors
+$background-primary: #0a0b0e;
+$background-secondary: #121420;
+$background-tertiary: #1a1b26;
+
+$text-primary: #ffffff;
+$text-secondary: #a2a8d3;
+$text-tertiary: #6a6f8c;
+
+$accent-primary: #0ff4c6; // Neon cyan
+$accent-secondary: #f700ff; // Neon magenta
+$accent-tertiary: #3700ff; // Neon blue
+
+$success: #36f9ae;
+$warning: #f9cb36;
+$error: #f94f36;
+
+$glow-primary: rgba(15, 244, 198, 0.5);
+$glow-secondary: rgba(247, 0, 255, 0.3);
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $accent-primary, $accent-tertiary);
+$gradient-secondary: linear-gradient(
+  135deg,
+  $accent-secondary,
+  $accent-tertiary
+);
+$gradient-background: linear-gradient(to bottom, $background-primary, #0d1117);
+
+// Borders
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+$shadow-neon: 0 0 10px $glow-primary;

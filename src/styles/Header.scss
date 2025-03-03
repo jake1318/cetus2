@@ -1,0 +1,56 @@
+@import "./variables.scss";
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  width: 100%;
+  position: relative;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(to right, $accent-primary, $accent-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px $glow-primary;
+
+      span {
+        color: $text-primary;
+        -webkit-text-fill-color: $text-primary;
+        font-weight: 300;
+      }
+    }
+
+    .logo-glow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        ellipse at center,
+        rgba($accent-primary, 0.4),
+        transparent 70%
+      );
+      filter: blur(10px);
+      z-index: -1;
+    }
+  }
+
+  .network-badge {
+    padding: 0.5rem 1rem;
+    background: $background-secondary;
+    border: 1px solid $accent-primary;
+    color: $accent-primary;
+    border-radius: $border-radius-md;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 0 10px $glow-primary;
+  }
+}
